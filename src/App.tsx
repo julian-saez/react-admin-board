@@ -1,34 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Suspense } from 'react'
+import { BrowserRouter, Route } from 'react-router-dom'
+import NotFound from './utilities/NotFound'
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "primereact/resources/primereact.min.css";
 import './App.css'
+import LoginComponent from './pages/login/Login';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import PrivateRoutes from './models/routes/private_routes';
+import AuthGuard from './guards/auth.guard';
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Suspense>
+        <Provider store={store}>
+            <BrowserRouter>
+                <NotFound>
+                <Route path="/login" element={<LoginComponent />} />
+                <Route element={<AuthGuard privateValidation={true} />}>
+                    <Route path={`${PrivateRoutes.DASHBOARD}`} element={<p>dashboard</p>} />
+                </Route>
+                </NotFound>
+            </BrowserRouter>
+        </Provider>
+    </Suspense>
   )
 }
 
