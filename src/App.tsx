@@ -19,7 +19,8 @@ function App() {
                 <NotFound>
                 <Route path="/login" element={<LoginComponent />} />
                 <Route element={<AuthGuard privateValidation={true} />}>
-                    <Route path={`${PrivateRoutes.DASHBOARD}`} element={<p>dashboard</p>} />
+                    <Route path={PrivateRoutes.PRIVATE} element={<p>Private routes</p>} />
+                    <Route path={PrivateRoutes.DASHBOARD} element={<p>Dashboard</p>} />
                 </Route>
                 </NotFound>
             </BrowserRouter>

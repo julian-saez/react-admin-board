@@ -1,6 +1,6 @@
 const PrivateRoutes = {
-    PRIVATE: 'private',
-    DASHBOARD: 'Dashboard',
+    PRIVATE: '/*',
+    DASHBOARD: 'dashboard',
 }
 
 export default PrivateRoutes;

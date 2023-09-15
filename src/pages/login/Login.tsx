@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { createUser } from "../../redux/states/user";
 import { userResponse } from "../../interceptors/userResponse";
+import PrivateRoutes from "../../models/routes/private_routes";
 
 const LoginComponent = () => {
     const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const LoginComponent = () => {
         const auth = await authService();
         const result = userResponse( auth );
         dispatch( createUser( { ...result } ) );
-        navigate('/', { replace: true });
+        navigate(`/${PrivateRoutes.DASHBOARD}`, { replace: true });
     }
 
     const login = () => {
