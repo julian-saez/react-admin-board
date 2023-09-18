@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import PrivateRoutes from './models/routes/private_routes';
 import AuthGuard from './guards/auth.guard';
+import DashboardPage from './pages/dashboard/Dashboard';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
                 <Route path="/login" element={<LoginComponent />} />
                 <Route element={<AuthGuard privateValidation={true} />}>
                     <Route path={PrivateRoutes.PRIVATE} element={<p>Private routes</p>} />
-                    <Route path={PrivateRoutes.DASHBOARD} element={<p>Dashboard</p>} />
+                    <Route path={PrivateRoutes.DASHBOARD} element={<DashboardPage />} />
                 </Route>
                 </NotFound>
             </BrowserRouter>

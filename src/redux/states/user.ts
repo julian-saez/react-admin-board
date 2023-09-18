@@ -4,6 +4,7 @@ import { clearLocalStorage, persistLocalStorage } from '../../utilities/LocalSto
 
 export const EmptyUserState: IUser = {
     name: '',
+    avatar: '',
 };
 
 export const UserKey = 'user';
