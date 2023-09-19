@@ -52,7 +52,7 @@ const HeaderComponent = () => {
     const userState = useSelector( (store: AppStore) => store.user );
     return(
         <header>
-            <div>
+            <div id="logo-navbar">
                 <img src={ Logo } alt="" />
             </div>
             <div id="header_nav_items">

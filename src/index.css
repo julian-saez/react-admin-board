@@ -9,6 +9,10 @@
   -webkit-text-size-adjust: 100%;
 }
 
+* {
+    font-family: 'Mulish', sans-serif;
+}
+
 button {
     background-color: transparent;
     border: none;
@@ -20,9 +24,92 @@ button {
     font-weight: 700;
 }
 
+#dashboard {
+    padding: 20px;
+    background-color: white;
+    margin-top: 30px;
+    border-radius: 8px;
+    width: 95%;
+    height: 80vh;
+}
+
+#headers_dsbd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#items_dsbd_container {
+    padding-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5em;
+}
+
+.product_card {
+    border-radius: 8px;
+    border: 2px solid #DBD7F4;
+    padding: 8px 8px 0;
+    height: 280px;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.product_info_card {
+    display: flex;
+    flex-direction: column;
+}
+
+.product_image_card {
+    border-radius: 8px;
+    background-color: #DBD7F4;
+    height: 65%;
+    width: 100%;
+}
+
 #avatar_profile {
     border-radius: 100%;
     width: 50px;
+}
+
+#logo-navbar img {
+    width: 60px;
+}
+
+#lens_icon {
+    display: flex;
+    align-items: center;
+}
+
+#lens_icon svg {
+    width: 20px;
+    height: 20px;
+    margin-left: 22px;
+}
+
+#input_search_bg {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    padding: 12px 0;
+    background-color: #F7F7FC;
+}
+
+#input_search {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding-left: 15px;
+    font-size: 0.9rem;
+}
+
+#input_search::placeholder {
+    font-size: 0.9rem;
+    color: #9A9AB0;
+    font-weight: 300;
 }
 
 #nav_profile_btn {
@@ -39,12 +126,12 @@ button {
 
 .nav_username {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
     padding-bottom: 3px;
 }
 
 .nav_role {
-    font-weight: 200;
+    font-weight: 400;
     color: #9A9AB0;
 }
 
@@ -113,6 +200,7 @@ header {
 
 .p-button {
   border: none;
+  font-weight: 600;
   background-color: #272C60;
 }
 
