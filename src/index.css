@@ -15,9 +15,37 @@ button {
     cursor: pointer;
 }
 
+.logout {
+    color:#F20000 !important;
+    font-weight: 700;
+}
+
 #avatar_profile {
     border-radius: 100%;
     width: 50px;
+}
+
+#nav_profile_btn {
+    display: flex;
+    align-items: center;
+}
+
+#nav_profile_menu {
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.nav_username {
+    font-size: 1rem;
+    font-weight: 600;
+    padding-bottom: 3px;
+}
+
+.nav_role {
+    font-weight: 200;
+    color: #9A9AB0;
 }
 
 #header_nav_items {

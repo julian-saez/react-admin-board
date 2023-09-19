@@ -5,6 +5,7 @@ export const userResponse = ( res: AxiosResponse ) => {
     const result = {
         name,
         avatar: image,
+        role: 'Administrador'
     };
     return result;
 };
